@@ -17,10 +17,10 @@
 - 基于官网较新的 [openssh-8.9p1.tar.gz](https://mirrors.aliyun.com/pub/OpenBSD/OpenSSH/portable/openssh-8.9p1.tar.gz "openssh-8.9p1.tar.gz") 源码编译打包，编译参数：</p>
   `./configure --prefix=/usr/local/openssh --with-pam`
 
-- 微调代码，隐藏了openssh服务版本
+- 微调代码，隐藏了openssh服务版本 </p>
 ![](./img/ssh_3.jpg)
 
-- 禁用aes cbc加密算法，统一采用：
+- 禁用aes cbc加密算法，统一采用： </p>
   `aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com,aes256-ctr`
 
 - 开箱即用，直接安装即可，安装完后会取代系统默认的ssh服务，不会卸载旧版本openssh包
