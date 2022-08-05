@@ -1,6 +1,6 @@
 
 
-#### 1、近期（2022年3月份）安全厂商对内网服务器漏扫发现存在诸多漏洞，其中OpenSSH服务最为频繁（通过分析漏扫报告，只要是Linux服务器且开启默认ssh服务该服务器风险即为高危），漏洞详情如下：
+#### 1、近期（2022年3月份）安全厂商对我公司内网服务器漏扫发现存在诸多漏洞，其中OpenSSH服务最为频繁（通过分析漏扫报告，只要是Linux服务器且开启默认ssh服务该服务器风险即为高危），漏洞详情如下：
 
 ![](/img/ssh_1.jpg) 
 ![](/img/ssh_2.jpg)
@@ -32,7 +32,7 @@
 ```shell
 [root@local ~]# sed -i '/SELINUX/s/enforcing/disabled/' /etc/selinux/config && setenforce 0
 [root@local ~]# rpm -ivh OpenSSH-8.9p1-1.el7.x86_64.rpm 
-Preparing...                          ################################# [100%]
+Preparing...                            ################################# [100%]
 Updating / installing...
      1:OpenSSH-8.9p1-1.el7              ################################# [100%]
 ssh-keygen: generating new host keys: RSA DSA ECDSA ED25519
@@ -66,5 +66,9 @@ ssh-keygen: generating new host keys: RSA DSA ECDSA ED25519
 # vi /usr/local/openssh/etc/sshd_config     # 配置文件位于 /usr/local/openssh/etc 目录下
 # systemctl restart sshd                    # 重启sshd服务
 ```
+
+
+#### 6、更新后再次漏扫结果如下：
+![](./img/ssh_4.png)
 
 
